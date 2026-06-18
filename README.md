@@ -1,4 +1,4 @@
-# Uday — Interactive Engineering Portfolio
+# Interactive Engineering Portfolio
 
 An immersive, dark-mode, glassmorphic portfolio built in the design language of Linear / Vercel / Raycast, customized for **Uday — Backend & Infrastructure Engineer**. Inspired by the interaction model of `gen-ai-folio.vercel.app` (see `../ANALYSIS.md`), rebuilt from scratch with original content.
 
@@ -22,14 +22,6 @@ npm run typecheck    # tsc --noEmit
 ```
 > Requires Node 18.18+ (Node 20 LTS recommended).
 
-## Customize (single source of truth)
-Edit **`lib/data.ts`** — name, role, taglines, stats, skills, projects, experience, education, certifications, social links, terminal lines, and `resumeUrl`.
-
-Then:
-1. Drop your CV at `public/Uday-Resume.pdf` (or change `profile.resumeUrl`).
-2. Set `profile.github`, `profile.linkedin`, and `profile.siteUrl`.
-3. (Optional) add `public/og.png` (1200×630) and reference it under `openGraph.images` in `app/layout.tsx`.
-
 ## Project structure
 ```
 app/        layout (SEO, fonts, JSON-LD), page, globals.css, sitemap.ts, robots.ts
@@ -48,16 +40,4 @@ Next Metadata API (title template, description, keywords, canonical), OpenGraph 
 - Keyboard-focusable controls with visible focus rings; ARIA labels on icon links.
 - Animates only `transform`/`opacity`; R3F capped at `dpr=[1,1.5]`; `whileInView` uses `once`.
 
-## Deploy to Vercel
-1. Push this folder to a GitHub repo.
-2. On [vercel.com](https://vercel.com/new) → **Import** the repo.
-3. Framework preset: **Next.js** (auto-detected). Build `next build`, output handled automatically.
-4. Set `profile.siteUrl` to your production domain before deploy (used by metadata/sitemap).
-5. **Deploy.**
 
-CLI alternative:
-```bash
-npm i -g vercel
-vercel          # preview
-vercel --prod   # production
-```
